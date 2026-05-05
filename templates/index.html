@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - 專案目標展示</title>
+    <style>
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background-color: #f4f7f9; color: #2c3e50; line-height: 1.6; margin: 0; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 50px; background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { color: #0366d6; font-size: 2.2em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2em; color: #586069; }
+        .goal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        .goal-card { background: #fff; padding: 25px; border-radius: 12px; border-left: 5px solid #0366d6; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .goal-card h3 { margin-top: 0; display: flex; align-items: center; gap: 10px; color: #24292e; }
+        .goal-card p { color: #586069; font-size: 1.05em; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ title }}</h1>
+            <p class="subtitle">{{ team_goal }}</p>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 30px;">🚀 MVP 核心目標規劃</h2>
+        
+        <div class="goal-grid">
+            {% for goal in goals %}
+            <div class="goal-card">
+                <h3><span>{{ goal.icon }}</span> {{ goal.title }}</h3>
+                <p>{{ goal.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="footer">
+            <p>本頁面為專案開發目標（MVP）展示版 | 使用 Flask + Docker 容器化技術構建</p>
+        </div>
+    </div>
+</body>
+</html>
