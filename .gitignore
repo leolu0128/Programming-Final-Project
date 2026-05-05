@@ -1,0 +1,10 @@
+# 忽略虛擬環境資料夾
+venv/
+env/
+
+# 忽略 Python 產生的快取檔案
+__pycache__/
+*.pyc
+
+# 忽略 Mac 系統檔案
+.DS_Store
